@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('./Screenshot\ 2025-09-07\ 124508.png') no-repeat center center/cover;
+    }
+
+    .calculator {
+      background: #222;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 260px;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    #display {
+      width: 100%;
+      height: 50px;
+      font-size: 22px;
+      text-align: right;
+      margin-bottom: 15px;
+      padding: 10px;
+      padding-right: 20px; 
+      border: none;
+      border-radius: 8px;
+      background: #d2d0d0;
+      box-sizing: border-box;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #444;
+      color: white;
+    }
+
+    button:hover {
+      background: #666;
+    }
+
+    .operator {
+      background: orange;
+    }
+    .operator:hover {
+      background: darkorange;
+    }
+
+    .clear {
+      background: crimson;
+    }
+    .clear:hover {
+      background: darkred;
+    }
+
+    .backspace {
+      background: teal;
+    }
+    .backspace:hover {
+      background: darkcyan;
+    }
+
+    .equal {
+      grid-column: span 2;
+      background: #007BFF;
+    }
+    .equal:hover {
+      background: #0056b3;
+    }
+
+    .plus {
+      grid-column: span 2; 
+      background: orange;
+    }
+    .plus:hover {
+      background: darkorange;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Calculator</h1>
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button class="operator" onclick="press('/')">/</button>
+
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button class="operator" onclick="press('*')">*</button>
+
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button class="operator" onclick="press('-')">-</button>
+
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button class="operator plus" onclick="press('+')">+</button>
+
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <button class="backspace" onclick="backspace()">⌫</button>
+      <button class="equal" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
